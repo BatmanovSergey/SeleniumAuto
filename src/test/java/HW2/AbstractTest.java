@@ -3,6 +3,7 @@ package HW2;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -20,11 +21,11 @@ public class AbstractTest {
     static void init() throws MalformedURLException {
 
         // Настройки локального WebDriver.a
-//        ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("start-maximized"); // режим полного экрана
-//        chromeOptions.addArguments("incognito");
-//        driver = new ChromeDriver(chromeOptions);
-//        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("start-maximized"); // режим полного экрана
+        chromeOptions.addArguments("incognito");
+        driver = new ChromeDriver(chromeOptions);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
 
 
@@ -46,17 +47,17 @@ public class AbstractTest {
 
 
 //        //// Настройки удалённого WebDriver.a - вариант 2
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("start-maximized"); // режим полного экрана
-        chromeOptions.addArguments("incognito");
-        chromeOptions.setCapability("enableVNC", true);
-        chromeOptions.setCapability("enablelog", true);
-        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-
-        driver = new RemoteWebDriver(new URL("https://localhost:4444/wd/hub"), capabilities);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setBrowserName("chrome");
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("start-maximized"); // режим полного экрана
+//        chromeOptions.addArguments("incognito");
+//        chromeOptions.setCapability("enableVNC", true);
+//        chromeOptions.setCapability("enablelog", true);
+//        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+//
+//        driver = new RemoteWebDriver(new URL("https://localhost:4444/wd/hub"), capabilities);
+//        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
 
